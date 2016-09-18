@@ -1,3 +1,5 @@
+dateservice:
+  dateFormat: 'hh:mm:ss yyyy-MM-dd'
 jetty:
   context: /hascode
   connector:

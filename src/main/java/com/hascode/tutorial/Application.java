@@ -1,8 +1,10 @@
 package com.hascode.tutorial;
 
+import com.google.inject.Inject;
 import com.google.inject.Module;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
+import com.google.inject.name.Named;
 
 import io.bootique.BQCoreModule;
 import io.bootique.Bootique;
@@ -19,7 +21,8 @@ public class Application {
 
     @Provides
     @Singleton
-    public DateService provideDateService() {
+    @Inject
+    public DateService provideDateService(@Named("dateFormat") String dateFormat) {
         return new DateService();
     }
 }
